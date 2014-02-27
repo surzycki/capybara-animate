@@ -4,3 +4,5 @@ require 'pry'
 require 'simplecov'
 
 require 'capybara/animate'
+
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each { |f| puts f; require f }

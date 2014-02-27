@@ -53,6 +53,7 @@ Feature: README.md statements of public interface
       page.should have_selector("a[href='/gems/#{gem_name}']")
     end
     """
-    When I successfully run `bundle exec cucumber` for up to 24 seconds
+    When I successfully run `bundle exec cucumber` for up to 48 seconds
     Then the output should contain "1 scenario (1 passed)"
     And a file named "html-report/Finding the Capybara gem.gif" should exist
+    And the animated gif "html-report/Finding the Capybara gem.gif" should have 4 frames
