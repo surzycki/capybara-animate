@@ -13,7 +13,7 @@ module Capybara
       end
 
       def add(page)
-        file = "#{tmpdir}/0.png"
+        file = "#{tmpdir}/#{current_frame}.png"
         page.save_screenshot(file, width: 320, height: 480)
         gif_anime.add(file)
       end
@@ -24,6 +24,10 @@ module Capybara
 
       private
       attr_reader :tmpdir, :gif_anime
+
+      def current_frame
+        gif_anime.frames.length
+      end
 
       def make_path_unless_exists(file)
         FileUtils.mkdir_p(File.dirname(file)) unless File.exists?(File.dirname(file))
