@@ -5,6 +5,7 @@ describe Capybara::Animate do
     :attach_file,
     :check,
     :choose,
+    :click_button,
     :click_link,
     :click_link_or_button,
     :click_on,

@@ -5,6 +5,7 @@ if defined?(Capybara::Session)
   end
 
   After do |scenario|
+    page.recorder.add(page)
     page.recorder.generate!
   end
 end
