@@ -21,13 +21,15 @@ Or install it yourself as:
 
 ## Usage
 
-Capybara::Animate automatically hooks in to Cucumber Scenarios tagged with ```@javascript```. However, if your driver supports ```#save_screenshot```, you can create animations for scenarios tagged with ```@record```.
+Capybara::Animate automatically hooks in to Cucumber Scenarios tagged with ```@javascript```. It depends on a driver that implements ```#save_screenshot```
 
-If you prefer to disable Capybara::Animate for some ```@javascript``` scenarios, tag them with ```@off-the-record```.
+## Credit
+
+This is entirely based off of the work of [Shimpei Makimoto's RubyConf 2013 Lightning Talk](https://github.com/makimoto/feature_spec_with_animation/). Simply: my contributions are to make it a gem that plugs into Cucumber scenarios automatically.
 
 ## Contributing
 
-In development, Capybara::Animate depends on tesseract and capybara-webkit. On OS X, you can install tesseract with ```brew install tesseract```. Capybara-webkit depends on the X window system and Qt.
+In development, Capybara::Animate depends on capybara-webkit. Capybara-webkit depends on the X window system and Qt, see [capybara-webkit's README for instructions on how to setup its dependencies](https://github.com/thoughtbot/capybara-webkit/)
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
