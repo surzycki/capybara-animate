@@ -25,8 +25,8 @@ module Capybara
     module UserActions
       USER_ACTIONS.each do |action_method|
         define_method action_method do |*args, &block|
-          self.recorder.add(self)
           super(*args, &block)
+          self.recorder.add(self)
         end
       end
     end
