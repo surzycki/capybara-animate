@@ -1,11 +1,23 @@
 require 'spec_helper'
 
 describe Capybara::Animate do
+  ExpectedUserActions = [
+    :attach_file,
+    :check,
+    :choose,
+    :click_link,
+    :click_link_or_button,
+    :click_on,
+    :evaluate_script,
+    :execute_script,
+    :fill_in,
+    :go_back,
+    :go_forward,
+    :unselect,
+    :visit,
+  ]
   class Dummy
-    [
-    :attach_file, :check, :choose, :click_link_or_button, :click_link,
-    :fill_in, :unselect, :click_on, :execute_script, :evaluate_script,
-    :visit, :go_back, :go_forward].each do |lazy|
+    ExpectedUserActions.each do |lazy|
       define_method lazy do |*args, &block|
         instance_variable_set("@#{lazy}", true)
       end
@@ -37,9 +49,7 @@ describe Capybara::Animate do
       end
 
       context "should add itself to the recorder" do
-        [:attach_file, :check, :choose, :click_link_or_button, :click_link,
-        :fill_in, :unselect, :click_on, :execute_script, :evaluate_script,
-        :visit, :go_back, :go_forward].each do |attribute|
+        ExpectedUserActions.each do |attribute|
           it "for #{attribute}" do
             expect(subject.recorder).to receive(:add).with(subject)
             subject.send(attribute)
