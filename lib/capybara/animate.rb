@@ -19,17 +19,17 @@ module Capybara
     USER_ACTIONS = [
       :attach_file,
       :check,
+      :uncheck,
       :choose,
       :click_button,
       :click_link,
-      :click_link_or_button,
       :click_on,
       :evaluate_script,
       :execute_script,
       :fill_in,
       :go_back,
       :go_forward,
-      :unselect,
+      :select,
       :visit,
     ].freeze
 

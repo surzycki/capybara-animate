@@ -8,7 +8,7 @@ module Capybara
       def initialize(output_name)
         @output_file = "#{output_name}.gif"
         make_path_unless_exists(output_file)
-        @gif_anime = Gifanime.new(output_file, delay: 40)
+        @gif_anime = Gifanime.new(output_file, delay: 60)
         @tmpdir = Dir.mktmpdir
       end
 
