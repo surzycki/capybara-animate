@@ -48,4 +48,4 @@ end
 
 require 'capybara/animate/gif_recorder'
 require 'capybara/animate/hooks/cucumber' if defined?(Cucumber)
-require 'capybara/animate/hooks/turnip' if defined?(Turnip)
+
