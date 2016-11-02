@@ -23,6 +23,7 @@ module Capybara
       :choose,
       :click_button,
       :click_link,
+      :click_link_or_button,
       :click_on,
       :evaluate_script,
       :execute_script,
@@ -30,6 +31,7 @@ module Capybara
       :go_back,
       :go_forward,
       :select,
+      :unselect,
       :visit,
     ].freeze
 
