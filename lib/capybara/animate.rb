@@ -51,7 +51,6 @@ module Capybara
         define_method matcher_method do |arg|
           self.recorder.add(self)
           super(arg)
-
         end
       end
     end
