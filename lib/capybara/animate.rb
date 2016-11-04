@@ -49,8 +49,9 @@ module Capybara
 
       MATCHERS.each do |matcher_method|
         define_method matcher_method do |arg|
-          super(arg)
           self.recorder.add(self)
+          super(arg)
+
         end
       end
     end
