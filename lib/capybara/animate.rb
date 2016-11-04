@@ -33,6 +33,7 @@ module Capybara
       :select,
       :unselect,
       :visit,
+      :have_content
     ].freeze
 
     module UserActions
