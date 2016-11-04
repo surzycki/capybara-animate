@@ -16,6 +16,10 @@ module Capybara
       @recorder = other
     end
 
+    MATCHERS = [
+      :have_content
+    ]
+
     USER_ACTIONS = [
       :attach_file,
       :check,
@@ -32,14 +36,20 @@ module Capybara
       :go_forward,
       :select,
       :unselect,
-      :visit,
-      :have_content
+      :visit
     ].freeze
 
     module UserActions
       USER_ACTIONS.each do |action_method|
         define_method action_method do |*args, &block|
           super(*args, &block)
+          self.recorder.add(self)
+        end
+      end
+
+      MATCHERS.each do |matcher_method|
+        define_method matcher_method do |arg|
+          super(arg)
           self.recorder.add(self)
         end
       end
